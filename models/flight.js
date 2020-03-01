@@ -1,4 +1,7 @@
-import { Schema } from "mongoose";
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+// import { Schema } from "mongoose";
 
 const flightSchema = new Schema({
     airline: {
@@ -19,4 +22,9 @@ const flightSchema = new Schema({
     required: true,
     },
 
-})
+});
+
+module.exports = mongoose.model(
+    'Flight',
+    flightSchema
+);
